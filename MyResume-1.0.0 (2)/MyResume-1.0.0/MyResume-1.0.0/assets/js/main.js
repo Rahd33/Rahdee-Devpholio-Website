@@ -206,14 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
 
     // Optional: 3D interactive effect
-    el.addEventListener("mousemove", e => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = (-y / 10).toFixed(2);
-      const rotateY = (x / 10).toFixed(2);
-      el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+   el.addEventListener("mousemove", e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    const rotateX = Math.round(-y / 10); // <-- rounded to integer
+    const rotateY = Math.round(x / 10);  // <-- rounded to integer
+    el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
 
     el.addEventListener("mouseleave", () => {
       el.style.transform = "rotateX(0deg) rotateY(0deg)";
@@ -228,105 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Frameworks & Libraries - Horizontal Bar with percentages
-  new Chart(document.getElementById('frameworkChart'), {
-    type: 'bar',
-    data: {
-      labels: ['Bootstrap', 'ASP.NET', 'ASP.NET Core', '.NET Framework'],
-      datasets: [{
-        data: [85, 80, 75, 80],
-        backgroundColor: createGradient(this,'#00c6ff','#0072ff'),
-        borderRadius: 10
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        datalabels: { color: '#333', anchor: 'end', align: 'end', font: { weight: 'bold' }, formatter: v => v + '%' }
-      },
-      scales: { x: { beginAtZero: true, max: 100, grid: { color: '#eee' } }, y: { grid: { color: '#eee' } } }
-    }
-  });
-
-  // RPA / Automation - Donut with percentages
-  new Chart(document.getElementById('rpaChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['UiPath','Automation Anywhere','SharePoint','PowerApps','Power Automate','Excel','Bizagi','Process Modeler'],
-      datasets: [{
-        data: [90,70,65,80,85,90,60,70],
-        backgroundColor: ['#ff6384','#36a2eb','#ffce56','#4bc0c0','#9966ff','#ff9f40','#8dd17e','#f45d4c']
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { display: false },
-        datalabels: { color: '#fff', font: { weight: 'bold' }, formatter: v => v + '%' }
-      },
-      cutout: '60%'
-    }
-  });
-
-  // UX / UI Design - Radial with percentages
-  new Chart(document.getElementById('uxChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Adobe XD','Figma','Miro','Illustrator','Photoshop','Indesign'],
-      datasets: [{
-        data: [90,85,75,80,70,65],
-        backgroundColor: ['#ff9a9e','#a18cd1','#fbc2eb','#84fab0','#8fd3f4','#fccb90'],
-        cutout: '70%'
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { display: false },
-        datalabels: { color: '#333', font: { weight: 'bold' }, formatter: v => v + '%' }
-      }
-    }
-  });
-
-  // Database - Vertical Bar with percentages
-  new Chart(document.getElementById('databaseChart'), {
-    type: 'bar',
-    data: {
-      labels: ['SQL','Azure Blobstorage','Microsoft Azure','Azure DevOps','Power Platform'],
-      datasets: [{
-        data: [50,80,85,75,70],
-        backgroundColor: createGradient(this,'#00c6ff','#0072ff'),
-        borderRadius: 10
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        datalabels: { color: '#333', anchor: 'end', align: 'end', font: { weight: 'bold' }, formatter: v => v + '%' }
-      },
-      scales: { y: { beginAtZero: true, max: 100, grid: { color: '#eee' } }, x: { grid: { color: '#eee' } } }
-    }
-  });
-
-  // Business / Productivity - Donut with percentages
-  new Chart(document.getElementById('businessChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Trello','Microsoft Office Suite','GitHub','MVC Architecture','REST API Integration','Visual Studio','Visual Studio Code'],
-      datasets: [{
-        data: [85,90,80,70,75,80,85],
-        backgroundColor: ['#ff9a9e','#a18cd1','#fbc2eb','#84fab0','#8fd3f4','#fccb90','#ffce56']
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { display: false },
-        datalabels: { color: '#333', font: { weight: 'bold' }, formatter: v => v + '%' }
-      },
-      cutout: '60%'
-    }
-  });
 
 
 // ============================

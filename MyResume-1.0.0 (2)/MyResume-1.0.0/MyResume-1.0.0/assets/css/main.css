@@ -685,7 +685,11 @@ padding-right: 50px !important;
   position: relative;
   width: 100px;
   height: 100px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
 }
+
 
 .progress-circle svg {
   transform: rotate(-90deg);
@@ -711,27 +715,28 @@ padding-right: 50px !important;
 
 .progress-circle .percent-text {
   position: absolute;
-  top: 55%;
-  left: 53%;
-  transform: translate(-50%, -55%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfectly center horizontally & vertically */
   font-size: 1.2rem;
   font-weight: bold;
   font-family: "Share Tech", sans-serif !important;
- color: #00bcd4;
-
+  color: #00bcd4;
+  text-align: center; /* ensure text alignment */
 }
 
 .progress-circle .label-text {
   position: absolute;
-  bottom: -1.8rem;
+  bottom: 20%; /* start at center */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 35px); /* move it slightly below center */
   font-size: 0.85rem;
   color: #333;
   font-weight: 500;
   font-family: "Roboto", sans-serif !important;
-
+  text-align: center;
 }
+
 .about .skills-content {
   display: flex;
   flex-direction: column;
