@@ -1120,7 +1120,7 @@ Bigger screens
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform:none;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
 }
@@ -1161,7 +1161,6 @@ Bigger screens
 Download button
 ========================= */
 
-
 /* Button Container */
 .resume-btn-container {
   display: flex;
@@ -1198,6 +1197,8 @@ Download button
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Icon styling */
@@ -1232,6 +1233,63 @@ Download button
   color: white;
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+   Mobile Styles
+========================== */
+/* ==========================
+Mobile effect (continuous sweep)
+========================= */
+@media (hover:none) {
+  .btn-download::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 12%; /* smaller sweep bar */
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    transform: skewX(-25deg);
+    animation: sweepLoop 1.2s linear infinite; /* faster */
+  }
+
+  @keyframes sweepLoop {
+    0%   { left: -75%; }
+    100% { left: 125%; }
+  }
+}
+
+
+/* ==========================
+Mobile layout (stack buttons)
+========================= */
+@media (max-width: 768px) {
+
+  .section-title p {
+    text-align: justify; /* left-align text on mobile */
+    /* font-size: 1rem;    adjust font size for smaller screens */
+    line-height: 1.5;   /* improve readability */
+    margin-top: 10px;   /* space below heading */
+    padding: 0 15px;    /* slight horizontal padding */
+  }
+  .resume-btn-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    padding: 0;
+  }
+
+  .btn-left, .btn-right {
+    width: 70%;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .btn-download {
+    width: 80%;
+  }
 }
 
 
