@@ -233,6 +233,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ============================
 
+
+
+// =============================
+// resume
+// =============================
+
+// Toggle between Education & Experience
+const educationBtn = document.getElementById("educationBtn");
+const experienceBtn = document.getElementById("experienceBtn");
+const educationTimeline = document.querySelector(".timeline-content.education");
+const experienceTimeline = document.querySelector(".timeline-content.experience");
+
+educationBtn.addEventListener("click", () => {
+  educationBtn.classList.add("active");
+  experienceBtn.classList.remove("active");
+  educationTimeline.classList.add("active");
+  experienceTimeline.classList.remove("active");
+});
+
+experienceBtn.addEventListener("click", () => {
+  experienceBtn.classList.add("active");
+  educationBtn.classList.remove("active");
+  experienceTimeline.classList.add("active");
+  educationTimeline.classList.remove("active");
+});
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+
+
+
+// ============================
+
   /**
    * Init isotope layout and filters
    */

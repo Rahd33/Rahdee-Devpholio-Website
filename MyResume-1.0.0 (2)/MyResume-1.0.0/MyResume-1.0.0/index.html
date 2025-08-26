@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -200,153 +200,140 @@
     </section>/Stats Section -->
 
     <!-- Skills Section -->
-<section id="professional-skills" class="skills-section">
-  <h2>Professional Skills</h2>
+  <section id="professional-skills" class="skills-section">
+    <h2>Professional Skills</h2>
+    <div class="grid-container">
 
 
-  </div>
-</section>
+
+    </div>
+  </section>
+
+
+
+
+
     <!-- /Skills Section -->
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
+     <section id="resume" class="resume section">
+    <div class="container section-title">
+      <h2>Resume</h2>
+      <p>  I thrive in environments that encourage innovation and continuous learning, with a passion for solving problems through technology.
+      With a background in web development, automation, and UX/UI design, I create solutions that are both scalable and engaging.
+      I work with HTML, CSS, JavaScript, Python, .NET, C#, UiPath, and Power Platform, while also leveraging design tools such as
+      Adobe Suite, Adobe XD, Figma, and Miro to craft modern user experiences. Adaptable and quick to learn, I thrive on applying
+      new knowledge to deliver impactful results.</p>
+    </div>
 
-      <!-- Section Title -->
-     <div class="container section-title" data-aos="fade-up">
-  <h2>Resume</h2>
-  <p>My resume is more than a list of skills, it is a story of passion, growth, and innovation for building solutions. Explore my journey through programming, automation, and design.</p>
-</div><!-- End Section Title -->
+    </p>
 
-<div class="container">
-  <div class="row">
+    <!-- Toggle Buttons -->
+    <div class="toggle-container">
+      <button id="educationBtn" class="toggle-btn active">Education</button>
+      <button id="experienceBtn" class="toggle-btn">Experience</button>
+    </div>
 
-    <!-- Left Column: Summary + Education -->
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="resume-title">Summary</h3>
-      <div class="resume-item pb-0">
-        <h4>Rahdee Salie</h4>
-        <p><em>I thrive in environments that encourage innovation and continuous learning, with a passion for solving problems through technology. With a background in web development, automation, and UX/UI design, I create solutions that are both scalable and engaging. I work with HTML, CSS, JavaScript, Python, .NET, C#, UiPath, and Power Platform, while also leveraging design tools such as Adobe Suite, Adobe XD, Figma, and Miro to craft modern user experiences. Adaptable and quick to learn, I thrive on applying new knowledge to deliver impactful results.</em></p>
-        <ul>
-          <li>Cape Town , Western Cape</li>
-          <li>069 731 2735</li>
-          <li>rahdee99@gmail.com</li>
-        </ul>
-      </div><!-- End Resume Item -->
+    <!-- Timeline Container -->
+    <div class="timeline" id="timeline">
 
-      <h3 class="resume-title">Education</h3>
+      <!-- Education Timeline -->
+      <div class="timeline-content education active">
+        <div class="timeline-item fade-in">
+          <h4>(Certificate) Introduction to RPA and Web Development</h4>
+          <span>Sep 2022 – May 2023</span>
+          <p>UWC Samsung Equity Equivalent Investment Programme</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>(Aligned N6) Multiplatform Software Development</h4>
+          <span>Feb 2022 – Jun 2022</span>
+          <p>UWC Samsung Future Innovation Lab</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>(Aligned N6) Digital Social Innovation</h4>
+          <span>Feb 2022 – Jun 2022</span>
+          <p>UWC Samsung Future Innovation Lab</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>(N6 Higher Certificate) Graphic Design</h4>
+          <span>2019 – 2021</span>
+          <p>College of Cape Town</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>Matric</h4>
+          <span>2013 – 2017</span>
+          <p>Darul Islam Islamic High School</p>
+        </div>
+      </div>
 
-      <div class="resume-item">
-        <h4>Introduction to RPA and Web Development (Certificate)</h4>
-        <h5>Sep 2022 – May 2023</h5>
-        <p><em>UWC Samsung Equity Equivalent Investment Programme</em></p>
-      </div><!-- End Resume Item -->
-
-      <div class="resume-item">
-        <h4>Introduction to Multiplatform Software Development (Aligned to N6 Certificate)</h4>
-        <h5>Feb 2022 – Jun 2022</h5>
-        <p><em>UWC Samsung Future Innovation Lab</em></p>
-      </div><!-- End Resume Item -->
-
-      <div class="resume-item">
-        <h4>Introduction to Digital Social Innovation (Aligned to N6 Certificate)</h4>
-        <h5>Feb 2022 – Jun 2022</h5>
-        <p><em>UWC Samsung Future Innovation Lab</em></p>
-      </div><!-- End Resume Item -->
-
-      <div class="resume-item">
-        <h4>N6 Higher Certificate in Art & Design (Graphic Design)</h4>
-        <h5>Jan 2019 – Jun 2021</h5>
-        <p><em>College of Cape Town</em></p>
-      </div><!-- End Resume Item -->
-
-      <div class="resume-item">
-        <h4>Matric</h4>
-        <h5>Jan 2013 – Dec 2017</h5>
-        <p><em>Darul Islam Islamic High School</em></p>
-      </div><!-- End Resume Item -->
-    </div><!-- End Left Column -->
-
-    <!-- Right Column: Professional Experience -->
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="resume-title">Professional Experience</h3>
+      <!-- Professional Experience Timeline -->
+      <div class="timeline-content experience">
 
         <!-- Junior Developer -->
-  <div class="resume-item">
-    <h4>  Junior .NET Developer</h4>
-    <h5>Mar 2023 – Present</h5>
-    <p><em>iOCO Digital Solutions</em></p>
-    <ul>
-      <li>Enhanced enterprise Proof of Delivery system integrated with Dynamics 365, SAP, and VXCeed.</li>
-      <li>Developed full-stack invoice processing web app using HTML, CSS, JavaScript, Python, SQL, MVC, and Azure.</li>
-      <li>Automated invoice processing and data workflows with UiPath and Power Automate.</li>
-    </ul>
-    <p><strong>Technologies:</strong> .NET, C#, Python, HTML, CSS, JavaScript, SQL, Azure, UiPath, Power Automate</p>
-  </div>
+        <div class="timeline-item fade-in">
+          <h4>Junior .NET Developer</h4>
+          <span>Mar 2023 – Present</span>
+          <p><em>iOCO Digital Solutions</em></p>
+          <ul>
+            <li>Enhanced enterprise Proof of Delivery system integrated with Dynamics 365, SAP, and VXCeed.</li>
+            <li>Developed full-stack invoice processing web app using HTML, CSS, JavaScript, Python, SQL, MVC, and Azure.</li>
+            <li>Automated invoice processing and data workflows with UiPath and Power Automate.</li>
+          </ul>
+          <p><strong>Technologies:</strong> .NET, C#, Python, HTML, CSS, JavaScript, SQL, Azure, UiPath, Power Automate</p>
+        </div>
 
-  <!-- Robotic Process Automation Developer (Intern) -->
-  <div class="resume-item">
-    <h4>  Robotic Process Automation Developer (Intern)</h4>
-    <h5>Jan 2023 – May 2024</h5>
-    <p><em>iOCO Digital Solutions</em></p>
-    <ul>
-      <li>Built low-code solutions using Power Apps and Power Automate to streamline internal operations.</li>
-      <li>Developed Employee Directory and Sales Tracking apps integrated with SharePoint and Microsoft Forms.</li>
-      <li>Automated data workflows, improving efficiency and reducing manual entry.</li>
-    </ul>
-    <p><strong>Technologies:</strong> Power Apps, Power Automate, SharePoint, Microsoft Forms, Microsoft Teams</p>
-  </div>
+        <!-- RPA Intern -->
+        <div class="timeline-item fade-in">
+          <h4>Robotic Process Automation Developer (Intern)</h4>
+          <span>Jan 2023 – May 2024</span>
+          <p><em>iOCO Digital Solutions</em></p>
+          <ul>
+            <li>Built low-code solutions using Power Apps and Power Automate to streamline internal operations.</li>
+            <li>Developed Employee Directory and Sales Tracking apps integrated with SharePoint and Microsoft Forms.</li>
+            <li>Automated data workflows, improving efficiency and reducing manual entry.</li>
+          </ul>
+          <p><strong>Technologies:</strong> Power Apps, Power Automate, SharePoint, Microsoft Forms, Microsoft Teams</p>
+        </div>
 
-  <!-- Software Developer Intern -->
-  <div class="resume-item">
-    <h4>  Software Developer Intern</h4>
-    <h5>Sep 2022 – May 2023</h5>
-    <p><em>Samsung Equity Equivalent Investment Programme (EEIP), University of the Western Cape</em></p>
-    <ul>
-      <li>Completed technical learnership in low-code development, web development, and RPA.</li>
-      <li>Built automation tools and vendor management app using PowerApps, Power Automate, SharePoint, and Microsoft Forms.</li>
-      <li>Gained hands-on experience in HTML, CSS, JavaScript, Python, T-SQL, SQL, and Bizagi process modeling.</li>
-    </ul>
-    <p><strong>Technologies:</strong> Power Automate, PowerApps, SharePoint, Microsoft Forms, HTML, CSS, JavaScript, Python</p>
-  </div>
+        <!-- Software Intern -->
+        <div class="timeline-item fade-in">
+          <h4>Software Developer Intern</h4>
+          <span>Sep 2022 – May 2023</span>
+          <p><em>Samsung Equity Equivalent Investment Programme, University of the Western Cape</em></p>
+          <ul>
+            <li>Completed technical learnership in low-code development, web development, and RPA.</li>
+            <li>Built automation tools and vendor management app using PowerApps, Power Automate, SharePoint, and Microsoft Forms.</li>
+            <li>Gained hands-on experience in HTML, CSS, JavaScript, Python, T-SQL, SQL, and Bizagi process modeling.</li>
+          </ul>
+          <p><strong>Technologies:</strong> Power Automate, PowerApps, SharePoint, Microsoft Forms, HTML, CSS, JavaScript, Python</p>
+        </div>
 
-  <!-- Mobile Developer Intern -->
-  <div class="resume-item">
-    <h4> Mobile Developer Intern</h4>
-    <h5>Feb 2022 – Aug 2022</h5>
-    <p><em>Samsung Future Innovation Lab – University of the Western Cape</em></p>
-    <ul>
-      <li>Co-developed KidReady app to promote early childhood mental well-being using .NET, C#, SQL, and ASP.NET MVC.</li>
-      <li>Designed UI/UX with intuitive layout, clean hierarchy, and accessible features for users.</li>
-      <li>Created graphics and wireframes using Adobe Illustrator and Miro; collaborated on app functionality and design.</li>
-    </ul>
-    <p><strong>Technologies:</strong> C#, ASP.NET MVC, SQL, .NET, CSS, Adobe Illustrator, Miro</p>
-  </div>
+        <!-- Mobile Developer Intern -->
+        <div class="timeline-item fade-in">
+          <h4>Mobile Developer Intern</h4>
+          <span>Feb 2022 – Aug 2022</span>
+          <p><em>Samsung Future Innovation Lab – University of the Western Cape</em></p>
+          <ul>
+            <li>Co-developed KidReady app to promote early childhood mental well-being using .NET, C#, SQL, and ASP.NET MVC.</li>
+            <li>Designed UI/UX with intuitive layout, clean hierarchy, and accessible features for users.</li>
+            <li>Created graphics and wireframes using Adobe Illustrator and Miro; collaborated on app functionality and design.</li>
+          </ul>
+          <p><strong>Technologies:</strong> C#, ASP.NET MVC, SQL, .NET, CSS, Adobe Illustrator, Miro</p>
+        </div>
 
-</div><!-- End Right Column -->
+      </div>
+    </div>
 
-  <!-- Resume & Certificates Buttons -->
-<div class="resume-btn-container" data-aos="fade-up" data-aos-delay="300">
-  <div class="btn-left">
-    <a href="assets/Rahdee Salie Resume.pdf" class="btn-download" download>
-      <i class="fas fa-file-alt"></i> Resume
-    </a>
-  </div>
-  <div class="btn-right">
-    <a href="assets/Rahdee Salie Certificates.pdf" class="btn-download" download>
-      <i class="fas fa-certificate"></i> Certificates
-    </a>
-  </div>
-</div>
+    <!-- Resume / Certificate Buttons -->
+    <div class="resume-btn-container">
+      <a href="assets/Rahdee Salie Resume (Word 2025).pdf" class="btn-download" target="_blank">
+        <i class="fas fa-file-alt"></i> Resume
+      </a>
+      <a href="assets/Rahdee Salie Certificates.pdf" class="btn-download" target="_blank">
+        <i class="fas fa-certificate"></i> Certificates
+      </a>
+    </div>
 
-
-
-
-  </div><!-- End Row -->
-
-</div><!-- End Container -->
-
-
-  </section><!-- /Resume Section -->
+  </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
@@ -832,8 +819,10 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
+<!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
   <script src="assets/js/main.js"></script>
 
