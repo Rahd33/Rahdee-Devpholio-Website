@@ -227,10 +227,30 @@ document.addEventListener("DOMContentLoaded", () => {
 // proffessional skills
 // =============================
 
+// Setup progress bars dynamically
+document.querySelectorAll('.skill-pill').forEach(pill => {
+  const percent = pill.getAttribute('data-percent');
+  const bar = document.createElement('div');
+  bar.classList.add('bar');
+  pill.appendChild(bar);
 
+  const label = document.createElement('div');
+  label.classList.add('percent');
+  label.textContent = percent + '%';
+  pill.appendChild(label);
 
+  // Animate on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bar.style.width = percent + '%';
+        observer.unobserve(pill);
+      }
+    });
+  }, { threshold: 0.3 });
 
-
+  observer.observe(pill);
+});
 // ============================
 
 
@@ -279,6 +299,25 @@ faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
+
+function forceDownload(url, fileName) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+document.querySelector(".btn-download.resume").addEventListener("click", (e) => {
+  e.preventDefault();
+  forceDownload("assets/Rahdee Salie Resume (Word 2025).pdf", "Rahdee-Salie-Resume.pdf");
+});
+
+document.querySelector(".btn-download.certificates").addEventListener("click", (e) => {
+  e.preventDefault();
+  forceDownload("assets/Rahdee Salie Certificates.pdf", "Rahdee-Salie-Certificates.pdf");
+});
 
 
 

@@ -30,6 +30,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -199,15 +200,79 @@
 
     </section>/Stats Section -->
 
-    <!-- Skills Section -->
-  <section id="professional-skills" class="skills-section">
-    <h2>Professional Skills</h2>
-    <div class="grid-container">
+<!-- Skills Section -->
+<section id="skills-dashboard" class="skills-section">
+  <h2 class="section-title">Professional Skills</h2>
 
-
-
+  <div class="skills-grid">
+    <!-- Card 1 -->
+    <div class="skill-card">
+      <h3>Programming Languages & Frameworks</h3>
+      <div class="skill-pill" data-percent="72"><span>Python</span></div>
+      <div class="skill-pill" data-percent="75"><span>C#</span></div>
+      <div class="skill-pill" data-percent="85"><span>HTML5</span></div>
+      <div class="skill-pill" data-percent="85"><span>CSS</span></div>
+      <div class="skill-pill" data-percent="75"><span>JavaScript</span></div>
+      <div class="skill-pill" data-percent="70"><span>Bootstrap</span></div>
+      <div class="skill-pill" data-percent="65"><span>ASP.NET</span></div>
+      <div class="skill-pill" data-percent="65"><span>ASP.NET Core</span></div>
+      <div class="skill-pill" data-percent="70"><span>.NET Framework</span></div>
     </div>
-  </section>
+
+    <!-- Card 2 -->
+    <div class="skill-card">
+      <h3>Automation & RPA</h3>
+      <div class="skill-pill" data-percent="80"><span>UiPath</span></div>
+      <div class="skill-pill" data-percent="70"><span>Automation Anywhere</span></div>
+      <div class="skill-pill" data-percent="80"><span>Power Automate</span></div>
+      <div class="skill-pill" data-percent="70"><span>Bizagi</span></div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="skill-card">
+      <h3>Cloud & Databases</h3>
+      <div class="skill-pill" data-percent="75"><span>SQL</span></div>
+      <div class="skill-pill" data-percent="70"><span>Microsoft Azure</span></div>
+      <div class="skill-pill" data-percent="62"><span>Azure Blob Storage</span></div>
+      <div class="skill-pill" data-percent="65"><span>Azure DevOps</span></div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="skill-card">
+      <h3>Power Platform & Microsoft Tools</h3>
+      <div class="skill-pill" data-percent="80"><span>PowerApps</span></div>
+      <div class="skill-pill" data-percent="80"><span>Power Platform</span></div>
+      <div class="skill-pill" data-percent="80"><span>SharePoint</span></div>
+      <div class="skill-pill" data-percent="75"><span>Excel</span></div>
+      <div class="skill-pill" data-percent="80"><span>Microsoft Office Suite</span></div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="skill-card">
+      <h3>UI/UX & Design Tools</h3>
+      <div class="skill-pill" data-percent="85"><span>Adobe XD</span></div>
+      <div class="skill-pill" data-percent="82"><span>Figma</span></div>
+      <div class="skill-pill" data-percent="80"><span>Miro</span></div>
+      <div class="skill-pill" data-percent="85"><span>Illustrator</span></div>
+      <div class="skill-pill" data-percent="82"><span>Photoshop</span></div>
+      <div class="skill-pill" data-percent="70"><span>InDesign</span></div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="skill-card">
+      <h3>Collaboration & Architecture</h3>
+      <div class="skill-pill" data-percent="70"><span>Trello</span></div>
+      <div class="skill-pill" data-percent="80"><span>GitHub</span></div>
+      <div class="skill-pill" data-percent="80"><span>MVC Architecture</span></div>
+      <div class="skill-pill" data-percent="75"><span>REST API Integration</span></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
 
 
@@ -225,7 +290,7 @@
       new knowledge to deliver impactful results.</p>
     </div>
 
-    </p>
+
 
     <!-- Toggle Buttons -->
     <div class="toggle-container">
@@ -324,14 +389,20 @@
     </div>
 
     <!-- Resume / Certificate Buttons -->
-    <div class="resume-btn-container">
-      <a href="assets/Rahdee Salie Resume (Word 2025).pdf" class="btn-download" target="_blank">
-        <i class="fas fa-file-alt"></i> Resume
-      </a>
-      <a href="assets/Rahdee Salie Certificates.pdf" class="btn-download" target="_blank">
-        <i class="fas fa-certificate"></i> Certificates
-      </a>
-    </div>
+<div class="resume-btn-container">
+  <a href="assets/Rahdee-Salie-Resume.pdf"
+     class="btn-download"
+     download="Rahdee-Salie-Resume.pdf">
+    <i class="fas fa-file-alt"></i> Resume
+  </a>
+
+  <a href="assets/Rahdee-Salie-Certificates.pdf"
+     class="btn-download"
+     download="Rahdee-Salie-Certificates.pdf">
+    <i class="fas fa-certificate"></i> Certificates
+  </a>
+</div>
+
 
   </section>
 
@@ -821,8 +892,13 @@
 
 
 <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="https://unpkg.com/chart.js"></script>
+
+<!-- Modern Legends with Percentages -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+
 
   <script src="assets/js/main.js"></script>
 
