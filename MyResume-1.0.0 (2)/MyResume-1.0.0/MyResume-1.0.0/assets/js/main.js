@@ -259,65 +259,40 @@ document.querySelectorAll('.skill-pill').forEach(pill => {
 // resume
 // =============================
 
-// Toggle between Education & Experience
-const educationBtn = document.getElementById("educationBtn");
-const experienceBtn = document.getElementById("experienceBtn");
-const educationTimeline = document.querySelector(".timeline-content.education");
-const experienceTimeline = document.querySelector(".timeline-content.experience");
+document.addEventListener("DOMContentLoaded", () => {
+  const educationBtn = document.getElementById("educationBtn");
+  const experienceBtn = document.getElementById("experienceBtn");
+  const educationTimeline = document.querySelector(".timeline-content.education");
+  const experienceTimeline = document.querySelector(".timeline-content.experience");
 
-educationBtn.addEventListener("click", () => {
-  educationBtn.classList.add("active");
-  experienceBtn.classList.remove("active");
-  educationTimeline.classList.add("active");
-  experienceTimeline.classList.remove("active");
-});
-
-experienceBtn.addEventListener("click", () => {
-  experienceBtn.classList.add("active");
-  educationBtn.classList.remove("active");
-  experienceTimeline.classList.add("active");
-  educationTimeline.classList.remove("active");
-});
-
-// Fade-in on scroll
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
+  educationBtn.addEventListener("click", () => {
+    educationBtn.classList.add("active");
+    experienceBtn.classList.remove("active");
+    educationTimeline.classList.add("active");
+    experienceTimeline.classList.remove("active");
   });
-}, appearOptions);
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+  experienceBtn.addEventListener("click", () => {
+    experienceBtn.classList.add("active");
+    educationBtn.classList.remove("active");
+    experienceTimeline.classList.add("active");
+    educationTimeline.classList.remove("active");
+  });
+
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
 });
 
-
-function forceDownload(url, fileName) {
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-document.querySelector(".btn-download.resume").addEventListener("click", (e) => {
-  e.preventDefault();
-  forceDownload("assets/Rahdee Salie Resume (Word 2025).pdf", "Rahdee-Salie-Resume.pdf");
-});
-
-document.querySelector(".btn-download.certificates").addEventListener("click", (e) => {
-  e.preventDefault();
-  forceDownload("assets/Rahdee Salie Certificates.pdf", "Rahdee-Salie-Certificates.pdf");
-});
 
 
 
