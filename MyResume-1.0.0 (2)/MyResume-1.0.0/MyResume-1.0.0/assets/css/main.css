@@ -1052,14 +1052,27 @@ Professional Skills
 }
 
 
-.section-title {
+.Prof-section-title {
   font-family: "Share Tech", sans-serif;
   font-size: 45px;
   font-weight: 700;
-  margin-bottom: 20px;   /* <-- this is why it's so far from the paragraph */
+  margin-bottom: 40px;   /* <-- this is why it's so far from the paragraph */
   text-transform: uppercase;
   text-align: center;
 }
+
+.skills-intro  {
+    font-family: var(--default-font) !important; /* normal font */
+    font-size: 15px !important;
+    font-weight: 400 !important;  /* normal weight */
+    text-align: justify !important;
+    line-height: 1.6 !important;
+  margin: 0px auto 40px auto; /* same spacing below as grid gap */
+    text-transform: none !important;  /* prevents uppercase inheritance */
+    letter-spacing: normal !important; /* resets any inherited letter-spacing */
+
+}
+
 
 .skills-grid {
   display: grid;
@@ -1151,11 +1164,11 @@ bigger screens
     padding: 1.2rem;
   }
 
-.section-title {
+.Prof-section-title {
   font-family: "Share Tech", sans-serif;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 700;
-  margin-bottom: 25px !important;   /* <-- this is why it's so far from the paragraph */
+  margin-bottom: 25px;   /* <-- this is why it's so far from the paragraph */
   text-transform: uppercase;
   text-align: center;
 }
