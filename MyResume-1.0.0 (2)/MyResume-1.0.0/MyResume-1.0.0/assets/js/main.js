@@ -260,25 +260,6 @@ document.querySelectorAll('.skill-pill').forEach(pill => {
 // =============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const educationBtn = document.getElementById("educationBtn");
-  const experienceBtn = document.getElementById("experienceBtn");
-  const educationTimeline = document.querySelector(".timeline-content.education");
-  const experienceTimeline = document.querySelector(".timeline-content.experience");
-
-  educationBtn.addEventListener("click", () => {
-    educationBtn.classList.add("active");
-    experienceBtn.classList.remove("active");
-    educationTimeline.classList.add("active");
-    experienceTimeline.classList.remove("active");
-  });
-
-  experienceBtn.addEventListener("click", () => {
-    experienceBtn.classList.add("active");
-    educationBtn.classList.remove("active");
-    experienceTimeline.classList.add("active");
-    educationTimeline.classList.remove("active");
-  });
-
   // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
   const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
@@ -291,6 +272,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }, appearOptions);
 
   faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Force credential links to open in new tab
+  document.querySelectorAll('.resume-column a').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
 });
 
 

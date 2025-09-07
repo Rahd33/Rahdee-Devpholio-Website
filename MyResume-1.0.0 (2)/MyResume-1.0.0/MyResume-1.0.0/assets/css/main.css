@@ -932,7 +932,7 @@ font-family: "Noto Sans",sans-serif !important;
     font-weight: 400 !important;
     text-align: justify !important;
     line-height: 1.6 !important;
-    margin: 20px auto 0 auto !important; /* top margin small to move paragraph closer to h4 */
+    margin: 15px auto 0 auto !important; /* top margin small to move paragraph closer to h4 */
     text-transform: none !important;
     letter-spacing: normal !important;
 }
@@ -1356,7 +1356,7 @@ bigger screens
 #resume .section-title h2::before {
   content: "";
   position: absolute;
-  bottom: 13px;
+  bottom: 10px;
   left: 50%;
   width: 140px;     /* slightly longer grey line */
   height: 1px;
@@ -1369,7 +1369,7 @@ bigger screens
 #resume .section-title h2::after {
   content: "";
   position: absolute;
-  bottom: 11px;
+  bottom: 8px;
   left: 50%;
   width: 60px;       /* blue line length */
   height: 3px;       /* blue line thickness */
@@ -1387,12 +1387,130 @@ bigger screens
     margin: 6.5px auto 0px auto !important; /* top:25px pushes paragraph down */
 }
 
+/* Resume Wrapper & Centering */
+.resume-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Vertical center divider */
+.resume-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 150%;
+  transform: translateX(-50%);
+
+  background: #0563bb; /* light grey */
+
+}
 
 
 
+/* Grid layout for 2 columns */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Columns */
+.resume-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+/* Section Headers - single line */
+/* Section Headers - single line with lower underline */
+.resume-section {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;      /* more space below header */
+  color: #00bcd4;
+  display: inline-block;
+  padding-bottom: 22px;     /* pushes line lower */
+  border-bottom: 3px solid #00bcd4; /* thicker line */
+  white-space: nowrap;       /* prevent wrapping */
+}
 
 
-/* ====== Fade-in Animation ====== */
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Timeline items with left bullet */
+.timeline-item {
+  position: relative;
+  padding-left: 27px;
+  margin-bottom: 25px;
+}
+
+/* Modern outline bullets */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #00bcd4;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Timeline text */
+.timeline-item h4 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0563bb;
+}
+
+.timeline-item span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Nested lists inside experience */
+.timeline-item ul {
+  margin: 8px 0 0 15px;
+  padding: 0;
+  list-style: disc inside;
+}
+
+/* Links - hover color only */
+.timeline-item a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.timeline-item a:hover {
+  color: #0563bb;
+}
+
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -1402,15 +1520,6 @@ bigger screens
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ====== Toggle Visibility ====== */
-.timeline-content {
-  display: none;
-}
-
-.timeline-content.active {
-  display: block;
 }
 
 
@@ -1546,6 +1655,18 @@ font-family: "Noto Sans",sans-serif !important;
   text-align: justify;
   line-height: 1.5;
     margin: 6.5px auto 0px auto !important; /* top:25px pushes paragraph down */
+  }
+
+     .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-wrapper::before {
+    display: none; /* hide vertical line on mobile */
+  }
+
+  .horizontal-divider {
+    width: 100%;
   }
 }
 
