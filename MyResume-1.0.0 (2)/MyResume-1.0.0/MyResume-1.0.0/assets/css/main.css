@@ -1233,16 +1233,12 @@ text-align: center;
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-dark);
   z-index: 2;
- font-family: "Inter",sans-serif !important;
- font-weight: bold;
+ font-family: "Noto Sans",sans-serif !important;
+ font-weight: normal;
 }
-
-/* ===================
-bigger screens
-================== */
 
 
 /* ======================== */
@@ -1304,7 +1300,7 @@ bigger screens
   }
 
   .skill-card {
-    padding: 3.5rem;
+    padding: 3.2rem;
   }
 
   .skill-card h3 {
@@ -1317,12 +1313,12 @@ bigger screens
   }
 
   .skill-pill span {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
   }
 
   .skill-pill .percent {
-    font-size: 0.75rem;
-    right: 10px;
+    font-size: 0.70rem;
+    right: 5.5px;
   }
 }
 /*--------------------------------------------------------------
@@ -1332,14 +1328,14 @@ bigger screens
 /* Section */
 .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
+  margin-top: 1px;
 
 }
 
 .section-title h2 {
   font-family: "Share Tech", sans-serif;
   font-size: 45px;
-  font-weight: 700;
   text-transform: uppercase;
   position: relative;      /* 👈 added */
   display: inline-block;   /* 👈 keeps underline centered under text */
@@ -1379,7 +1375,7 @@ bigger screens
 
 
 .section-title p {
-  font-family: var(--default-font, "Noto Sans", sans-serif);
+  font-family: var(--default-font, "Roboto", sans-serif);
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
@@ -1391,7 +1387,7 @@ bigger screens
 .resume-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+ padding: 15px 20px 40px 20px; /* 👈 reduced top padding */
   position: relative;
 }
 
@@ -1404,11 +1400,9 @@ bigger screens
   left: 150%;
   transform: translateX(-50%);
 
-  background: #0563bb; /* light grey */
+  background: #00bcd4; /* light grey */
 
 }
-
-
 
 /* Grid layout for 2 columns */
 .resume-grid {
@@ -1419,42 +1413,86 @@ bigger screens
   z-index: 2;
 }
 
+/* Columns ( blue sub headers*/
+.resume-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15.5px;
+  position: relative;
+}
+
+/* ============================= */
+/* Resume Layout & Divider       */
+/* ============================= */
+
+/* Vertical center divider */
+.resume-wrapper {
+  position: relative; /* needed for ::before to align correctly */
+}
+.resume-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;              /* middle of wrapper */
+  transform: translateX(-50%);
+  width: 2px;             /* divider thickness */
+  background: #00bcd4;    /* divider color */
+  z-index: 1;
+}
+
+/* Grid layout for 2 columns */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  position: relative;
+  z-index: 2; /* keeps content above divider */
+}
+
 /* Columns */
 .resume-column {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 15px;
   position: relative;
+  z-index: 2;
 }
 
-/* Section Headers - single line */
-/* Section Headers - single line with lower underline */
+/* ============================= */
+/* Section Headers               */
+/* ============================= */
+
 .resume-section {
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 15px;      /* more space below header */
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 17px;
   color: #00bcd4;
   display: inline-block;
-  padding-bottom: 22px;     /* pushes line lower */
-  border-bottom: 3px solid #00bcd4; /* thicker line */
-  white-space: nowrap;       /* prevent wrapping */
+  padding-bottom: 16.5px;
+  border-bottom: 2px solid #0563bb;
+  white-space: nowrap;
+  font-family: "Share Tech", sans-serif !important;
+  letter-spacing: 0.5px; /* 👈 adjust as needed */
 }
 
 
+/* ============================= */
+/* Timeline List & Items         */
+/* ============================= */
 
-/* Timeline */
 .timeline {
   list-style: none;
   padding: 0;
   margin: 0;
-  position: relative;
+  font-family: "Roboto", sans-serif !important;
 }
 
-/* Timeline items with left bullet */
 .timeline-item {
   position: relative;
-  padding-left: 27px;
-  margin-bottom: 25px;
+  padding-left: 25px;
+  margin-bottom: 30px;
+
 }
 
 /* Modern outline bullets */
@@ -1462,53 +1500,157 @@ bigger screens
   content: "";
   position: absolute;
   left: 0;
-  top: 8px;
-  width: 12px;
-  height: 12px;
+  top: 5.5px;
+  width: 10px;
+  height: 10px;
   border: 2px solid #00bcd4;
   border-radius: 50%;
   background: #fff;
 }
 
-/* Timeline text */
+/* ============================= */
+/* Timeline Text Styles          */
+/* ============================= */
+
+
 .timeline-item h4 {
-  margin: 0 0 5px;
-  font-size: 18px;
+  margin: 0 0 6px;
+  font-size: 17px;
   font-weight: 600;
   color: #0563bb;
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
 }
 
 .timeline-item span {
   display: block;
   font-size: 14px;
   color: #666;
-  margin-bottom: 8px;
+   font-family: "Roboto", sans-serif;
+  margin: 0 0 6px;
+   margin-top: 5px;       /* spacing from the title */
 }
 
 .timeline-item p {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 15px;
   color: #444;
+   font-family: "Roboto", sans-serif;
+  margin-top: 8px;       /* spacing from the title */
 }
 
+
+/* Sub-header for roles & responsibilities */
+.timeline-item .sub-header {
+  font-size: 14px;
+  font-weight: 500;   /* bold */
+  color: #464a4e;        /* dark neutral for readability */
+  margin: 12px 0;      /* small spacing above/below */
+  text-transform: none; /* optional: makes it stand out */
+ font-family: "Roboto", sans-serif;
+     white-space: normal;  /* prevent text from being forced on one line */
+}
 /* Nested lists inside experience */
 .timeline-item ul {
   margin: 8px 0 0 15px;
   padding: 0;
   list-style: disc inside;
 }
+.timeline-item ul li {
+  margin-bottom: 8px;
+  line-height: 2;
+   font-family: "Roboto", sans-serif;
+   font-size: 14px;
+}
 
-/* Links - hover color only */
-.timeline-item a {
+/* ============================= */
+/* Links                         */
+/* ============================= */
+
+/* .timeline-item a {
   color: #00bcd4;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  font-family: var(--default-font);
 }
-
 .timeline-item a:hover {
   color: #0563bb;
+} */
+
+/* Base SVG styling */
+/* .bi-arrow-right { */
+
+  /* cursor: pointer;           indicates it's clickable
+  transition: all 0.3s ease; smooth hover effect */
+/* } */
+svg.bi-arrow-right {
+  width: 20px;   /* scalable */
+  height: 20px;
+  fill: #00bcd4; /* your accent blue */
+  vertical-align: middle;
+  transition: transform 0.3s ease, fill 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
+/* Hover effect */
+.bi-arrow-right:hover {
+
+  stroke: #0563bb;           /* add stroke outline */
+  stroke-width: 0.3;         /* makes it appear bolder */
+}
+
+
+/* ============================= */
+/* Flex Layouts                  */
+/* ============================= */
+
+/* Header with span/date inline */
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Certificate item header */
+.timeline-item .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+     white-space: normal;  /* prevent text from being forced on one line */
+}
+
+/* Links in item-header */
+.timeline-item .item-header a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00bcd4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+.timeline-item .item-header a:hover {
+  color: #0563bb;
+}
+
+
+
+/* ============================= */
+
+
+/* .timeline-header h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0563bb;
+}
+
+.timeline-header .year {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+} */
 
 /* Fade-in animation */
 .fade-in {
@@ -1530,7 +1672,7 @@ bigger screens
   justify-content: center;
   align-items: center;
   gap: 350px;          /* reduced gap so buttons are closer together */
-  margin: 40px 0 20px; /* reduced margin so buttons are closer to the timeline */
+  margin: 25px 0 20px; /* reduced margin so buttons are closer to the timeline */
   padding: 0;
 }
 
@@ -1607,20 +1749,20 @@ font-family: "Noto Sans",sans-serif !important;
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+
+/* Section title */
+.section-title {
+  text-align: center;
+  margin: 10px 0 20px 0; /* balanced spacing above & below */
+}
+
 .section-title h2 {
   font-family: "Share Tech", sans-serif;
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  position: relative;      /* 👈 added */
-  display: inline-block;   /* 👈 keeps underline centered under text */
-}
-
-
-/* Make Resume heading a positioning container */
-#resume .section-title h2 {
   position: relative;
-  display: inline-block; /* keeps underline tight under text */
+  display: inline-block;
 }
 
 /* Grey underline */
@@ -1629,11 +1771,10 @@ font-family: "Noto Sans",sans-serif !important;
   position: absolute;
   bottom: 7px;
   left: 50%;
-  width: 120px;     /* slightly longer grey line */
+  width: 120px;
   height: 1px;
-  background: #ddd; /* grey color */
-  transform: translateX(-50%) translateY(1px); /* nudges it to center with blue */
-
+  background: #ddd;
+  transform: translateX(-50%) translateY(1px);
 }
 
 /* Blue underline */
@@ -1642,64 +1783,196 @@ font-family: "Noto Sans",sans-serif !important;
   position: absolute;
   bottom: 5px;
   left: 50%;
-  width: 60px;       /* blue line length */
-  height: 3px;       /* blue line thickness */
-  background: #0563bb; /* same blue as Resume */
+  width: 60px;
+  height: 3px;
+  background: #0563bb;
   transform: translateX(-50%);
 }
 
 .section-title p {
-  font-family: var(--default-font, "Noto Sans", sans-serif);
+  font-family: var(--default-font, "Roboto", sans-serif);
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
-  line-height: 1.5;
-    margin: 6.5px auto 0px auto !important; /* top:25px pushes paragraph down */
+  line-height: 1.6; /* slightly looser for readability */
+  margin: 10px auto 0 auto !important;
+}
+
+.resume-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 30px;                 /* tighter spacing */
   }
 
-     .resume-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* Remove vertical divider */
   .resume-wrapper::before {
-    display: none; /* hide vertical line on mobile */
+    display: none;
   }
 
-  .horizontal-divider {
-    width: 100%;
+
+
+
+  .resume-section {
+    font-size:25px;
+    margin-bottom: 10px;
+    padding-bottom: 18px;
   }
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 22px;   /* space for bullet */
+  margin-bottom: 18px;
+}
+.timeline-item p {
+  font-size: 13px;
+  margin: 4px 0 0;   /* small spacing above */
+  line-height: 1.4;
+  color: #333;       /* darker for readability (optional) */
+}
+
+/* Bullet aligned with first line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;          /* aligns with first text line */
+  width: 6.7px;
+  height: 6.7px;
+  border: 2px solid #00bcd4;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Wrap title + arrow neatly */
+.item-header {
+  display: flex;
+  justify-content: space-between; /* keeps arrow aligned */
+  align-items: flex-start;        /* arrow aligns with top line */
+  gap: 8px;
+}
+
+/* Title */
+.timeline-item h4 {
+  font-size: 14px;
+  margin: 0;
+  flex: 1;                /* take remaining space */
+  word-break: break-word; /* breaks long text */
+  line-height: 1.4;
+}
+
+/* Arrow link */
+.timeline-item a {
+  flex-shrink: 0;         /* arrow never shrinks */
+  display: flex;
+  align-items: center;    /* vertically aligns to top */
+  margin-top: 2px;        /* tiny adjust for perfect alignment */
+}
+
+/* Date always below */
+.timeline-item span {
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+  word-break: break-word;
+}
+
+.sub-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  color: #00bcd4;         /* accent color */
+  font-family: "Roboto", sans-serif;
+  text-transform: none;
+}
+
+.timeline-item ul {
+  margin: 0;
+  padding-left: 18px;     /* indent for bullets */
+  list-style: disc;       /* standard round bullets */
+  font-size: 13px;
+}
+
+.timeline-item ul li {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  color: #333;            /* darker for readability */
+}
+
+
+/* Arrow SVG styling */
+svg.bi-arrow-right {
+  width: 14px;
+  height: 14px;
+  fill: #00bcd4;
+  transition: transform 0.3s ease, fill 0.3s ease;
+  cursor: pointer;
+}
+svg.bi-arrow-right:hover {
+  transform: translateX(4px);
+  fill: #0097a7;
+}
+
+
+ .resume-btn-container {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  gap: 16px;                /* space between buttons */
+  margin-top: 20px;
+}
+.btn-download {
+  width: 80%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #00bcd4;
+  color: white;
+  font-weight: bold;
+  padding: 14px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* icons */
+.btn-download i {
+  font-size: 1.2rem;
+}
+
+/* sweep overlay */
+.btn-download::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 11%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: skewX(-25deg);
+  animation: sweep 2s linear infinite; /* continuous sweep */
+}
+
+@keyframes sweep {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
 }
 
 
 
 
-
-/* ==========================
-Mobile effect (continuous sweep)
-========================= */
-@media (hover:none) {
-  .btn-download::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 12%;
-    height: 100%;
-    background: rgba(255,255,255,0.25);
-    transform: skewX(-25deg);
-    animation: sweepLoop 1.2s linear infinite;
-  }
-
-  @keyframes sweepLoop {
-    0%   { left: -75%; }
-    100% { left: 125%; }
-  }
-
-
-
 }
-
-
 
 
 /* ============================ */
