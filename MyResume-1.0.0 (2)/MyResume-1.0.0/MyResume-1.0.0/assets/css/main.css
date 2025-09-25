@@ -1840,9 +1840,9 @@ font-family: "Noto Sans",sans-serif !important;
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55em;          /* aligns with first text line */
-  width: 6.7px;
-  height: 6.7px;
+  top: 0.45rem;          /* aligns with first text line */
+  width: 7.5px;
+  height: 7.5px;
   border: 2px solid #00bcd4;
   border-radius: 50%;
   background: #fff;
@@ -1858,11 +1858,11 @@ font-family: "Noto Sans",sans-serif !important;
 
 /* Title */
 .timeline-item h4 {
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   flex: 1;                /* take remaining space */
   word-break: break-word; /* breaks long text */
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Arrow link */
@@ -1871,6 +1871,7 @@ font-family: "Noto Sans",sans-serif !important;
   display: flex;
   align-items: center;    /* vertically aligns to top */
   margin-top: 2px;        /* tiny adjust for perfect alignment */
+
 }
 
 /* Date always below */
@@ -1907,8 +1908,8 @@ font-family: "Noto Sans",sans-serif !important;
 
 /* Arrow SVG styling */
 svg.bi-arrow-right {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   fill: #00bcd4;
   transition: transform 0.3s ease, fill 0.3s ease;
   cursor: pointer;
@@ -1923,11 +1924,12 @@ svg.bi-arrow-right:hover {
   display: flex;
   flex-direction: column;   /* stack vertically */
   align-items: center;      /* center horizontally */
-  gap: 16px;                /* space between buttons */
+  gap: 20px;                /* space between buttons */
   margin-top: 20px;
 }
 .btn-download {
-  width: 80%;
+  width: 75%;
+  height: 53px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1971,10 +1973,6 @@ svg.bi-arrow-right:hover {
 
 
 
-
-}
-
-
 /* ============================ */
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -1997,7 +1995,7 @@ svg.bi-arrow-right:hover {
   margin-bottom: 5px;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
-  font-family: var(--heading-font);
+  font-family: "Noto Sans", sans-serif;
 }
 
 #portfolio .section-title p {
@@ -2024,6 +2022,50 @@ svg.bi-arrow-right:hover {
 .portfolio .portfolio-filters li:last-child {
   margin-right: 0;
 }
+
+.portfolio-info p {
+  font-size: 14px;          /* readable but not too large */
+  line-height: 1.6;         /* good spacing for readability */
+  color: #666;              /* softer than pure black */
+  margin-top: 8px;          /* spacing below the title */
+  margin-bottom: 0;         /* prevent extra bottom gap */
+  text-align: left;      /* tidy block alignment */
+  min-height: 60px;         /* keeps cards equal height */
+  overflow: hidden;         /* hides long overflow */
+  text-overflow: ellipsis;  /* ... if needed */
+}
+
+
+.portfolio-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 530px; /* fixed height to match vertical image */
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures no distortion, crops horizontally */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.portfolio-img .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.portfolio-img:hover .hover-img {
+  opacity: 1;
+}
+
+.portfolio-img:hover .default-img {
+  opacity: 0;
+}
+
+
 
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
